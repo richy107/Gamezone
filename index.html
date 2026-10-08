@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="GameZone gaming tips, guides, PC performance advice and GTA V cheats.">
+<title>GameZone | Gaming Tips & Guides</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#0b0d12;color:#f5f7fa;line-height:1.6}
+header{background:#11151d;border-bottom:1px solid #252b36;position:sticky;top:0;z-index:10}
+.nav{max-width:1100px;margin:auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:24px;font-weight:800}nav a,footer a{color:#cbd2dd;text-decoration:none;margin-left:15px;font-size:14px}
+.hero,main,.page,.article{max-width:1100px;margin:auto;padding-left:18px;padding-right:18px}
+.hero{padding-top:50px;padding-bottom:25px}.hero h1{font-size:clamp(36px,8vw,60px);line-height:1.05;margin:0 0 12px}
+.hero p,.card p,.page p,.article p{color:#aeb6c4}
+.search{display:flex;max-width:700px;margin-top:22px}
+.search input{flex:1;min-width:0;padding:15px;border:1px solid #303746;border-radius:10px 0 0 10px;background:#151a23;color:#fff;font-size:16px}
+.search button{padding:15px 20px;border:0;border-radius:0 10px 10px 0;font-weight:bold;cursor:pointer}
+.categories{max-width:1100px;margin:auto;padding:0 18px 20px;display:flex;gap:9px;overflow-x:auto;scrollbar-width:none}
+.categories::-webkit-scrollbar{display:none}.cat{white-space:nowrap;padding:9px 14px;border:1px solid #303746;border-radius:999px;background:#151a23;color:#dfe4ec;cursor:pointer}
+.cat.active{background:#fff;color:#111}
+main{padding-top:10px;padding-bottom:55px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:#121720;border:1px solid #252c38;border-radius:14px;padding:20px}
+.tag{font-size:12px;color:#9da7b7;text-transform:uppercase}.card h3{margin:7px 0}
+.read,.back{display:inline-block;color:#111;background:#fff;border:0;border-radius:8px;padding:10px 13px;font-weight:bold;cursor:pointer}
+.page,.article{display:none;padding-top:35px;padding-bottom:60px;max-width:850px}
+.page h1,.article h1{font-size:clamp(30px,7vw,48px);line-height:1.1}
+.article .body{white-space:pre-line;color:#b8c0cd}
+footer{border-top:1px solid #252b36;padding:25px 18px;text-align:center;color:#8993a3;font-size:13px}
+footer a{margin:0 7px}
+@media(max-width:750px){nav a{display:none}.hero{padding-top:38px}.grid{grid-template-columns:1fr}.card{padding:18px}}
+
+.lead{color:#9aa4b2;margin-top:-8px;margin-bottom:22px}
+.article-view{display:none;max-width:900px;margin:0 auto;padding:20px 18px 60px}
+.article-view.show{display:block}
+.article-panel{background:#121722;border:1px solid #2a3140;border-radius:18px;padding:28px}
+.article-panel h1{font-size:clamp(28px,5vw,46px);margin:10px 0 22px}
+.article-panel p{color:#cbd2dc;line-height:1.75;white-space:pre-wrap}
+.close{background:#202735;color:#fff;border:1px solid #394252;padding:10px 15px;border-radius:10px;cursor:pointer;margin-bottom:15px}
+""</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo">GAMEZONE</div><nav>
+<a href="#" onclick="home();return false">Home</a>
+<a href="#" onclick="showPage('about');return false">About</a>
+<a href="#" onclick="showPage('contact');return false">Contact</a>
+</nav></div></header>
+
+<section id="home">
+<div class="hero"><h1>Level up your game.</h1><p>Gaming tips, guides, performance advice and useful cheat guides.</p>
+<div class="search"><input id="search" type="search" placeholder="Search gaming articles..." oninput="filterCards()"><button onclick="filterCards()">Search</button></div></div>
+<div class="categories">
+<button class="cat active" onclick="filterCat('All')">All</button>
+<button class="cat" onclick="filterCat('Gaming Tips')">Gaming Tips</button>
+<button class="cat" onclick="filterCat('PC Gaming')">PC Gaming</button>
+<button class="cat" onclick="filterCat('Fortnite')">Fortnite</button>
+<button class="cat" onclick="filterCat('GTA')">GTA V</button>
+<button class="cat" onclick="filterCat('EA FC')">EA FC</button>
+<button class="cat" onclick="filterCat('NBA 2K')">NBA 2K</button>
+<button class="cat" onclick="filterCat('WWE 2K')">WWE 2K</button>
+<button class="cat" onclick="filterCat('Hardware')">Hardware</button>
+</div>
+<main>
+<h2>Latest Guides</h2>
+<p class="lead">A growing library of gaming tips, guides and game-specific tutorials.</p>
+<div class="grid" id="cards"><article class="card" data-title="Best Graphics Settings for 8GB RAM Gaming PCs" data-cat="PC Gaming"><span class="tag">PC Gaming</span><h3>Best Graphics Settings for 8GB RAM Gaming PCs</h3><p>Practical settings for smoother gaming on an 8GB PC.</p><button class="read" onclick="openArticle(0)">Read article →</button></article>
+<article class="card" data-title="How to Improve FPS on a Low-End Gaming PC" data-cat="PC Gaming"><span class="tag">PC Gaming</span><h3>How to Improve FPS on a Low-End Gaming PC</h3><p>A practical FPS checklist.</p><button class="read" onclick="openArticle(1)">Read article →</button></article>
+<article class="card" data-title="Fortnite Settings for Smoother Gameplay" data-cat="Fortnite"><span class="tag">Fortnite</span><h3>Fortnite Settings for Smoother Gameplay</h3><p>Performance-focused settings for smoother matches.</p><button class="read" onclick="openArticle(2)">Read article →</button></article>
+<article class="card" data-title="How Much RAM Do You Need for Gaming?" data-cat="Hardware"><span class="tag">Hardware</span><h3>How Much RAM Do You Need for Gaming?</h3><p>Understand RAM and multitasking.</p><button class="read" onclick="openArticle(3)">Read article →</button></article>
+<article class="card" data-title="GTA V: How to Get Better Performance" data-cat="GTA"><span class="tag">GTA</span><h3>GTA V: How to Get Better Performance</h3><p>A practical GTA V performance checklist.</p><button class="read" onclick="openArticle(4)">Read article →</button></article>
+<article class="card" data-title="GTA V Safe Story Mode Cheats: PC, PS4 &amp; PS5" data-cat="GTA"><span class="tag">GTA</span><h3>GTA V Safe Story Mode Cheats: PC, PS4 &amp; PS5</h3><p>Non-weapon Story Mode cheat codes for gameplay experiments.</p><button class="read" onclick="openArticle(5)">Read article →</button></article>
+<article class="card" data-title="5 Things to Check Before Buying a Gaming PC" data-cat="Hardware"><span class="tag">Hardware</span><h3>5 Things to Check Before Buying a Gaming PC</h3><p>Compare the whole system instead of one specification.</p><button class="read" onclick="openArticle(6)">Read article →</button></article>
+<article class="card" data-title="SSD vs HDD for Gaming" data-cat="Hardware"><span class="tag">Hardware</span><h3>SSD vs HDD for Gaming</h3><p>Understand storage speed and capacity.</p><button class="read" onclick="openArticle(7)">Read article →</button></article>
+<article class="card" data-title="Why Does My Game Keep Stuttering?" data-cat="Gaming Tips"><span class="tag">Gaming Tips</span><h3>Why Does My Game Keep Stuttering?</h3><p>Find common causes of inconsistent frame times.</p><button class="read" onclick="openArticle(8)">Read article →</button></article>
+<article class="card" data-title="How to Choose the Right Resolution for Gaming" data-cat="Gaming Tips"><span class="tag">Gaming Tips</span><h3>How to Choose the Right Resolution for Gaming</h3><p>Balance image quality and performance.</p><button class="read" onclick="openArticle(9)">Read article →</button></article>
+<article class="card" data-title="Beginner&#x27;s Guide to Building a Gaming PC" data-cat="PC Gaming"><span class="tag">PC Gaming</span><h3>Beginner&#x27;s Guide to Building a Gaming PC</h3><p>Learn the main PC parts and how they work together.</p><button class="read" onclick="openArticle(10)">Read article →</button></article>
+<article class="card" data-title="20 Quick Gaming Tips Every Beginner Should Know" data-cat="Gaming Tips"><span class="tag">Gaming Tips</span><h3>20 Quick Gaming Tips Every Beginner Should Know</h3><p>A big starter checklist for better gaming sessions.</p><button class="read" onclick="openArticle(11)">Read article →</button></article>
+<article class="card" data-title="How to Fix Input Delay in Games" data-cat="Gaming Tips"><span class="tag">Gaming Tips</span><h3>How to Fix Input Delay in Games</h3><p>Reduce unnecessary controller, mouse and display delay.</p><button class="read" onclick="openArticle(12)">Read article →</button></article>
+<article class="card" data-title="How to Improve Aim Without Changing Everything" data-cat="Gaming Tips"><span class="tag">Gaming Tips</span><h3>How to Improve Aim Without Changing Everything</h3><p>Build better consistency with simple practice.</p><button class="read" onclick="openArticle(13)">Read article →</button></article>
+<article class="card" data-title="How to Stop Overheating While Gaming" data-cat="PC Gaming"><span class="tag">PC Gaming</span><h3>How to Stop Overheating While Gaming</h3><p>Basic cooling and airflow checks.</p><button class="read" onclick="openArticle(14)">Read article →</button></article>
+<article class="card" data-title="Gaming Monitor Settings Explained" data-cat="Hardware"><span class="tag">Hardware</span><h3>Gaming Monitor Settings Explained</h3><p>Understand refresh rate, response time and game mode.</p><button class="read" onclick="openArticle(15)">Read article →</button></article>
+<article class="card" data-title="How to Organize Your Gaming Storage" data-cat="Hardware"><span class="tag">Hardware</span><h3>How to Organize Your Gaming Storage</h3><p>Keep your game library easier to manage.</p><button class="read" onclick="openArticle(16)">Read article →</button></article>
+<article class="card" data-title="EA FC 26 Squad Building Basics" data-cat="EA FC"><span class="tag">EA FC</span><h3>EA FC 26 Squad Building Basics</h3><p>Build a stronger squad by balancing roles, chemistry and requirements.</p><button class="read" onclick="openArticle(17)">Read article →</button></article>
+<article class="card" data-title="EA FC 26 Built-In Squad &amp; Tactics Guide" data-cat="EA FC"><span class="tag">EA FC</span><h3>EA FC 26 Built-In Squad &amp; Tactics Guide</h3><p>Use player roles and tactical settings to make your squad work together.</p><button class="read" onclick="openArticle(18)">Read article →</button></article>
+<article class="card" data-title="EA FC 26 SBC Checklist" data-cat="EA FC"><span class="tag">EA FC</span><h3>EA FC 26 SBC Checklist</h3><p>A simple checklist before submitting an SBC.</p><button class="read" onclick="openArticle(19)">Read article →</button></article>
+<article class="card" data-title="EA FC 26 Attacking Tips" data-cat="EA FC"><span class="tag">EA FC</span><h3>EA FC 26 Attacking Tips</h3><p>Create better chances without forcing every attack.</p><button class="read" onclick="openArticle(20)">Read article →</button></article>
+<article class="card" data-title="EA FC 26 Defending Tips" data-cat="EA FC"><span class="tag">EA FC</span><h3>EA FC 26 Defending Tips</h3><p>Defend with shape instead of chasing the ball everywhere.</p><button class="read" onclick="openArticle(21)">Read article →</button></article>
+<article class="card" data-title="EA FC 26 Passing Tips" data-cat="EA FC"><span class="tag">EA FC</span><h3>EA FC 26 Passing Tips</h3><p>Improve possession and reduce unnecessary turnovers.</p><button class="read" onclick="openArticle(22)">Read article →</button></article>
+<article class="card" data-title="EA FC 26 Career Mode Team-Building Tips" data-cat="EA FC"><span class="tag">EA FC</span><h3>EA FC 26 Career Mode Team-Building Tips</h3><p>Build a balanced squad for longer saves.</p><button class="read" onclick="openArticle(23)">Read article →</button></article>
+<article class="card" data-title="NBA 2K Beginner Tips: Controls and Spacing" data-cat="NBA 2K"><span class="tag">NBA 2K</span><h3>NBA 2K Beginner Tips: Controls and Spacing</h3><p>Learn spacing before trying advanced moves.</p><button class="read" onclick="openArticle(24)">Read article →</button></article>
+<article class="card" data-title="NBA 2K Shooting Tips" data-cat="NBA 2K"><span class="tag">NBA 2K</span><h3>NBA 2K Shooting Tips</h3><p>Build a repeatable shooting routine.</p><button class="read" onclick="openArticle(25)">Read article →</button></article>
+<article class="card" data-title="NBA 2K Defense Tips" data-cat="NBA 2K"><span class="tag">NBA 2K</span><h3>NBA 2K Defense Tips</h3><p>Become harder to score against with positioning.</p><button class="read" onclick="openArticle(26)">Read article →</button></article>
+<article class="card" data-title="NBA 2K MyCAREER Progression Tips" data-cat="NBA 2K"><span class="tag">NBA 2K</span><h3>NBA 2K MyCAREER Progression Tips</h3><p>Spend upgrades around the playstyle you actually use.</p><button class="read" onclick="openArticle(27)">Read article →</button></article>
+<article class="card" data-title="NBA 2K MyTEAM Squad-Building Tips" data-cat="NBA 2K"><span class="tag">NBA 2K</span><h3>NBA 2K MyTEAM Squad-Building Tips</h3><p>Create a balanced lineup instead of stacking one position.</p><button class="read" onclick="openArticle(28)">Read article →</button></article>
+<article class="card" data-title="NBA 2K Pick-and-Roll Tips" data-cat="NBA 2K"><span class="tag">NBA 2K</span><h3>NBA 2K Pick-and-Roll Tips</h3><p>Use screens to create simple scoring options.</p><button class="read" onclick="openArticle(29)">Read article →</button></article>
+<article class="card" data-title="NBA 2K Rebounding Tips" data-cat="NBA 2K"><span class="tag">NBA 2K</span><h3>NBA 2K Rebounding Tips</h3><p>Win more boards through positioning.</p><button class="read" onclick="openArticle(30)">Read article →</button></article>
+<article class="card" data-title="WWE 2K Beginner Tips" data-cat="WWE 2K"><span class="tag">WWE 2K</span><h3>WWE 2K Beginner Tips</h3><p>Learn the core match flow before chasing advanced combos.</p><button class="read" onclick="openArticle(31)">Read article →</button></article>
+<article class="card" data-title="WWE 2K Unlock Tips" data-cat="WWE 2K"><span class="tag">WWE 2K</span><h3>WWE 2K Unlock Tips</h3><p>Ways to find legitimate unlockable content in WWE 2K.</p><button class="read" onclick="openArticle(32)">Read article →</button></article>
+<article class="card" data-title="WWE 2K MyRISE Tips" data-cat="WWE 2K"><span class="tag">WWE 2K</span><h3>WWE 2K MyRISE Tips</h3><p>Progress efficiently through the story-focused mode.</p><button class="read" onclick="openArticle(33)">Read article →</button></article>
+<article class="card" data-title="WWE 2K Universe Mode Tips" data-cat="WWE 2K"><span class="tag">WWE 2K</span><h3>WWE 2K Universe Mode Tips</h3><p>Build a more organized wrestling universe.</p><button class="read" onclick="openArticle(34)">Read article →</button></article>
+<article class="card" data-title="How to Make a Gaming Setup Feel Faster" data-cat="Hardware"><span class="tag">Hardware</span><h3>How to Make a Gaming Setup Feel Faster</h3><p>Small changes that improve everyday usability.</p><button class="read" onclick="openArticle(35)">Read article →</button></article>
+<article class="card" data-title="How to Read FPS and Frame-Time Graphs" data-cat="Gaming Tips"><span class="tag">Gaming Tips</span><h3>How to Read FPS and Frame-Time Graphs</h3><p>Understand performance beyond one FPS number.</p><button class="read" onclick="openArticle(36)">Read article →</button></article>
+<article class="card" data-title="Best Order for Lowering Graphics Settings" data-cat="PC Gaming"><span class="tag">PC Gaming</span><h3>Best Order for Lowering Graphics Settings</h3><p>Know which settings to reduce first.</p><button class="read" onclick="openArticle(37)">Read article →</button></article></div>
+</main>
+<section id="articleView" class="article-view">
+  <button class="close" onclick="closeArticle()">← Back to guides</button>
+  <div class="article-panel">
+    <div id="articleMeta" class="tag"></div>
+    <h1 id="articleTitle"></h1>
+    <div id="articleBody"></div>
+  </div>
+</section>
+
+</section>
+
+<section class="article" id="article">
+<button class="back" onclick="home()">← Back to articles</button>
+<h1 id="articleTitle"></h1><p id="articleCategory"></p><div class="body" id="articleBody"></div>
+</section>
+
+<section class="page" id="about"><h1>About GameZone</h1><p>GameZone is a gaming information website focused on useful, beginner-friendly tips, guides and performance advice for PC and console players.</p></section>
+<section class="page" id="contact"><h1>Contact Us</h1><p>For questions, suggestions or corrections, contact the site owner.</p><p>Email: your-email@example.com</p></section>
+<section class="page" id="privacy"><h1>Privacy Policy</h1><p>GameZone may collect basic information needed to operate and improve the website. Advertising services may use cookies or similar technologies. Visitors can manage cookies through browser settings.</p></section>
+<section class="page" id="terms"><h1>Terms & Conditions</h1><p>Use GameZone lawfully and respectfully. Content is provided for general information and may change without notice. Do not republish substantial portions without permission.</p></section>
+<section class="page" id="disclaimer"><h1>Disclaimer</h1><p>Gaming performance varies by hardware, software, drivers and settings. GameZone does not guarantee identical results on every device.</p></section>
+<section class="page" id="editorial"><h1>Editorial Policy</h1><p>GameZone aims to publish original, useful and clear gaming content. Articles may be reviewed and updated when information changes.</p></section>
+
+<footer>© 2026 GameZone • Gaming tips made simple<br>
+<a href="#" onclick="showPage('about');return false">About</a><a href="#" onclick="showPage('contact');return false">Contact</a><a href="#" onclick="showPage('privacy');return false">Privacy Policy</a><a href="#" onclick="showPage('terms');return false">Terms</a><a href="#" onclick="showPage('disclaimer');return false">Disclaimer</a><a href="#" onclick="showPage('editorial');return false">Editorial Policy</a>
+</footer>
+
+<script>
+const data=[["Best Graphics Settings for 8GB RAM Gaming PCs", "PC Gaming", "Practical settings for smoother gaming on an 8GB PC.", "Start with a stable resolution and lower shadows, reflections, volumetric effects and view distance before lowering textures. Close unnecessary background apps and watch your frame-time consistency, not only the average FPS. If a game still stutters, test a lower resolution and an FPS cap that your PC can maintain consistently."], ["How to Improve FPS on a Low-End Gaming PC", "PC Gaming", "A practical FPS checklist.", "Update your graphics driver, close heavy background programs, use a sensible power/performance mode, and lower the settings that stress the GPU most. Shadows, reflections, ambient occlusion, volumetric effects and crowd density are common starting points. Change one or two settings at a time so you know what actually helped."], ["Fortnite Settings for Smoother Gameplay", "Fortnite", "Performance-focused settings for smoother matches.", "For weaker PCs, prioritize a stable frame rate over maximum visual quality. Lower shadows and effects, use a performance-focused preset when available, and avoid a resolution your GPU cannot maintain. Keep the game and graphics driver updated, and test settings in the same area of the map when comparing performance."], ["How Much RAM Do You Need for Gaming?", "Hardware", "Understand RAM and multitasking.", "More RAM can help when a game, browser tabs, recording software and other apps are open together. The right amount depends on the game and your other software. If your PC has limited RAM, closing background apps can reduce stutter and improve consistency."], ["GTA V: How to Get Better Performance", "GTA", "A practical GTA V performance checklist.", "Lower shadows, reflections, grass, advanced graphics and view distance first. If the game still struggles, reduce resolution or use an FPS limit. Test the same area after each change so you can tell whether a setting actually improved performance."], ["GTA V Safe Story Mode Cheats: PC, PS4 & PS5", "GTA", "Non-weapon Story Mode cheat codes for gameplay experiments.", "These are non-weapon GTA V Story Mode cheats. PC codes are typed after opening the cheat input with the ~ key. On PlayStation, enter the button sequence during Story Mode. Cheats can affect achievements/trophies during the session. Weapon-related cheat codes are intentionally not included.
+
+PC:
+• Max Health & Armor — TURTLE
+• Lower Wanted Level — LAWYERUP
+• Raise Wanted Level — FUGITIVE
+• Fast Run — CATCHME
+• Fast Swim — GOTGILLS
+• Super Jump — HOPTOIT
+• Drunk Mode — LIQUOR
+• Slow Motion Aim — DEADEYE
+• Change Weather — MAKEITRAIN
+• Moon Gravity — FLOATER
+• Skyfall — SKYFALL
+• Slidey Cars — SNOWDAY
+• Invincibility — PAINKILLER
+• Recharge Special Ability — POWERUP
+
+PS4 / PS5:
+• Max Health & Armor — Circle, L1, Triangle, R2, X, Square, Circle, Right, Square, L1, L1, L1
+• Lower Wanted Level — R1, R1, Circle, R2, Right, Left, Right, Left, Right, Left
+• Raise Wanted Level — R1, R1, Circle, R2, Left, Right, Left, Right, Left, Right
+• Fast Run — Triangle, Left, Right, Right, L2, L1, Square
+• Fast Swim — Left, Left, L1, Right, Right, R2, Left, L2, Right
+• Super Jump — Left, Left, Triangle, Triangle, Right, Right, Left, Right, Square, R1, R2
+• Drunk Mode — Triangle, Right, Right, Left, Right, Square, Circle, Left
+• Slow Motion Aim — Square, L2, R1, Triangle, Left, Square, L2, Right, X
+• Change Weather — R2, X, L1, L1, L2, L2, L2, Square
+• Moon Gravity — Left, Left, L1, R1, L1, Right, Left, L1, Left
+• Skyfall — L1, L2, R1, R2, Left, Right, Left, Right, L1, L2, R1, R2, Left, Right, Left, Right
+• Slidey Cars — Triangle, R1, R1, Left, R1, L1, R2, L1
+• Invincibility — Right, X, Right, Left, Right, R1, Right, Left, X, Triangle
+• Recharge Special Ability — X, X, Square, R1, L1, X, Right, Left, X
+
+These are for Story Mode, not GTA Online."], ["5 Things to Check Before Buying a Gaming PC", "Hardware", "Compare the whole system instead of one specification.", "Check the GPU, CPU, RAM, storage, power supply and cooling. Also check whether the motherboard and case leave room for future upgrades. A strong-looking CPU does not automatically make a PC a strong gaming machine; the graphics card matters heavily for many games."], ["SSD vs HDD for Gaming", "Hardware", "Understand storage speed and capacity.", "An SSD generally loads games and applications faster. An HDD can still be useful for large files and extra storage. A practical setup is often an SSD for the operating system and frequently played games, with additional storage for less frequently used files."], ["Why Does My Game Keep Stuttering?", "Gaming Tips", "Find common causes of inconsistent frame times.", "Check background programs, RAM usage, graphics settings, drivers, storage space and temperatures. Stuttering can happen even when average FPS looks good, so watch for sudden frame-time spikes. Lowering CPU-heavy settings such as crowd density can also help in some games."], ["How to Choose the Right Resolution for Gaming", "Gaming Tips", "Balance image quality and performance.", "Higher resolutions look sharper but require more GPU power. If your PC cannot hold a stable frame rate, lowering resolution can help. Pick the highest resolution your system can maintain comfortably rather than choosing a number just because it is higher."], ["Beginner's Guide to Building a Gaming PC", "PC Gaming", "Learn the main PC parts and how they work together.", "A gaming PC normally includes a CPU, motherboard, RAM, GPU, storage, power supply and case. Check compatibility between the socket, RAM type, motherboard, case size, storage interface and power requirements. Good airflow and a reliable power supply are important too."], ["20 Quick Gaming Tips Every Beginner Should Know", "Gaming Tips", "A big starter checklist for better gaming sessions.", "1. Learn the controls before jumping into ranked modes. 2. Keep your drivers updated. 3. Use a stable FPS target. 4. Turn down demanding effects before textures. 5. Keep enough storage free. 6. Close unnecessary background apps. 7. Learn the map. 8. Use practice modes. 9. Adjust sensitivity gradually. 10. Take breaks. 11. Save settings after testing. 12. Learn one mechanic at a time. 13. Watch your minimap. 14. Communicate clearly in team games. 15. Do not copy every setting from a pro. 16. Pick settings your hardware can maintain. 17. Back up important saves when possible. 18. Learn the game's tutorials. 19. Review mistakes instead of blaming teammates. 20. Focus on consistency."], ["How to Fix Input Delay in Games", "Gaming Tips", "Reduce unnecessary controller, mouse and display delay.", "Use a display's low-latency or game mode when available, avoid unnecessary processing effects, and keep the game at a frame rate your system can sustain. Check controller or mouse connection issues and test wired connections when practical. Network latency and input delay are different problems, so identify which one you are actually experiencing."], ["How to Improve Aim Without Changing Everything", "Gaming Tips", "Build better consistency with simple practice.", "Pick one sensitivity and keep it long enough to learn it. Practice tracking, flicking and target switching separately. Avoid changing sensitivity after every bad match. Short, focused practice sessions are usually easier to evaluate than random changes."], ["How to Stop Overheating While Gaming", "PC Gaming", "Basic cooling and airflow checks.", "Keep vents clear, make sure fans can move air, clean dust according to your PC manufacturer's guidance, and avoid blocking a laptop's intake. High temperatures can reduce performance through thermal throttling. If temperatures remain unusually high, have an adult or qualified technician check the hardware."], ["Gaming Monitor Settings Explained", "Hardware", "Understand refresh rate, response time and game mode.", "Refresh rate describes how often the display updates. A higher refresh rate can make motion look smoother when your PC can produce enough frames. Use a sensible resolution and refresh rate combination, and enable a low-latency/game mode if your monitor provides one."], ["How to Organize Your Gaming Storage", "Hardware", "Keep your game library easier to manage.", "Keep your operating system and frequently played games on faster storage when possible. Remove games you no longer use if storage is nearly full. Leave some free space so updates and temporary files have room to work."], ["EA FC 26 Squad Building Basics", "EA FC", "Build a stronger squad by balancing roles, chemistry and requirements.", "Before building a squad, identify the formation and roles you want first. For Ultimate Team SBCs, check the exact requirements for rating, chemistry, player quality, leagues, nations and clubs before submitting. EA recommends checking the reward, expiry time, Club/SBC Storage and Transfer Market before committing players. Start with items already in your Club or SBC Storage.
+
+For normal team building, avoid putting your highest-rated players into every position just for overall rating. Build around roles: a dependable goalkeeper, defenders who fit your defensive plan, midfielders who can progress or recover the ball, and attackers who complement each other. Save a few alternative players so you can adjust the squad without rebuilding everything."], ["EA FC 26 Built-In Squad & Tactics Guide", "EA FC", "Use player roles and tactical settings to make your squad work together.", "FC 26 separates Competitive and Authentic gameplay. Competitive is designed mainly for modes such as Ultimate Team and Clubs, while Authentic focuses on realism in Career. In squad management, use player Roles and Focuses to give your team a clearer identity. For example, a balanced midfield can include a ball-winning player plus someone who supports attacks.
+
+Do not force every player into a role that does not suit them. Check positions, preferred foot, PlayStyles, stamina and defensive contribution. Build one main tactic and one safer backup tactic so you have a plan when the opponent changes approach."], ["EA FC 26 SBC Checklist", "EA FC", "A simple checklist before submitting an SBC.", "1. Read every requirement. 2. Check the expiry time. 3. Look at the reward before spending players. 4. Search your Club and SBC Storage first. 5. Avoid submitting useful players you may need elsewhere. 6. Check rating and chemistry requirements. 7. Compare the cost with the reward. 8. Test cheaper club players before buying new items. 9. Remember that submitted players are normally committed to the challenge. 10. Double-check the squad before confirming."], ["EA FC 26 Attacking Tips", "EA FC", "Create better chances without forcing every attack.", "Use short passes to move defenders, then accelerate when a lane opens. Change the direction of attacks instead of repeatedly forcing the same wing. Use teammate runs when you need movement beyond the defensive line, but keep a passing option behind the ball. If the opponent parks the defense deep, patience and quick switches can create better openings than constant sprinting."], ["EA FC 26 Defending Tips", "EA FC", "Defend with shape instead of chasing the ball everywhere.", "Protect the dangerous central areas first. Use your controlled defender to delay the attacker while your team shape recovers. Avoid pulling a centre-back out of position unless you understand the cover behind them. Track runners, watch cutbacks and switch players early enough to close passing lanes."], ["EA FC 26 Passing Tips", "EA FC", "Improve possession and reduce unnecessary turnovers.", "Use safe passes when under pressure and directional passes when you can see the next action. Avoid sprinting immediately after receiving every pass. Scan for the third player and use switches of play when the opponent overloads one side. A simple extra pass can be more effective than a risky through ball."], ["EA FC 26 Career Mode Team-Building Tips", "EA FC", "Build a balanced squad for longer saves.", "Develop players according to the roles you actually use. Keep depth at key positions so injuries or fatigue do not destroy your system. Mix experienced players with younger prospects and give developing players realistic minutes. Use the Authentic preset if you want a more simulation-focused Career experience."], ["NBA 2K Beginner Tips: Controls and Spacing", "NBA 2K", "Learn spacing before trying advanced moves.", "Give ball handlers room to operate. Avoid standing directly beside the player with the ball. Learn basic passes, protect the ball and use simple pick-and-roll actions before chaining advanced dribble moves. On defense, stay between your matchup and the basket whenever possible."], ["NBA 2K Shooting Tips", "NBA 2K", "Build a repeatable shooting routine.", "Learn one release cue and practice it with the same player and shot type. Avoid changing animations constantly while learning. Take open shots rather than forcing contested attempts. Watch stamina because tired players can be less consistent depending on the mode and attributes."], ["NBA 2K Defense Tips", "NBA 2K", "Become harder to score against with positioning.", "Stay in front of your matchup, protect the paint when necessary and avoid reaching repeatedly. Learn when to switch and when to stay home. On-ball defense is easier when you anticipate the attack instead of reacting to every fake."], ["NBA 2K MyCAREER Progression Tips", "NBA 2K", "Spend upgrades around the playstyle you actually use.", "Choose a clear role before spending upgrade resources. A guard who relies on shooting and ball handling should not spread upgrades randomly across every attribute. Improve weaknesses that prevent your main style from working, then add secondary skills. Use practice opportunities to learn the upgraded abilities."], ["NBA 2K MyTEAM Squad-Building Tips", "NBA 2K", "Create a balanced lineup instead of stacking one position.", "Build around complementary roles: ball handling, shooting, defense, rebounding and size. Keep at least one reliable defender and one dependable ball handler on the floor. Check player attributes and animations rather than judging cards only by overall rating. Rotate lineups when stamina or matchup needs change."], ["NBA 2K Pick-and-Roll Tips", "NBA 2K", "Use screens to create simple scoring options.", "Read the defender after the screen. If they go under, a controlled pull-up may be available. If they switch, attack the mismatch. If help comes from the corner, look for the open teammate. Do not force the same finish every possession."], ["NBA 2K Rebounding Tips", "NBA 2K", "Win more boards through positioning.", "Find a body first, then pursue the ball. Box out before jumping when you can. Anticipate where the miss is likely to land based on the shot angle. Guards should also help secure long rebounds when the situation allows."], ["WWE 2K Beginner Tips", "WWE 2K", "Learn the core match flow before chasing advanced combos.", "Practice reversals, grapples, strikes, pins and submissions in a low-pressure mode. Watch your opponent's animation cues instead of mashing buttons. Manage stamina and avoid repeating the same attack until the opponent reverses it."], ["WWE 2K Unlock Tips", "WWE 2K", "Ways to find legitimate unlockable content in WWE 2K.", "Check the game's dedicated unlockables or in-game store sections and read the requirements shown for each item. Depending on the WWE 2K edition and mode, unlockables can be tied to objectives, currency, progression or specific match content. Use the current game's in-game instructions because requirements can change between yearly editions."], ["WWE 2K MyRISE Tips", "WWE 2K", "Progress efficiently through the story-focused mode.", "Complete available objectives before skipping optional content when rewards or progression are attached. Experiment with your character build, learn reversal timing and upgrade abilities that match your preferred wrestling style. Keep multiple saves when the game supports it so you can revisit different choices."], ["WWE 2K Universe Mode Tips", "WWE 2K", "Build a more organized wrestling universe.", "Create clear divisions, title paths and rivalries. Keep records of champions and contenders so storylines remain consistent. Rotate talent through different match types and avoid booking every superstar in every show. Small rivalries can make the calendar feel more believable."], ["How to Make a Gaming Setup Feel Faster", "Hardware", "Small changes that improve everyday usability.", "Use a comfortable mouse sensitivity, keep the desktop uncluttered, close unnecessary startup apps and organize your game library. A clean cable layout and clear desk can also make controls easier to reach. Performance improvements should focus on actual bottlenecks rather than random tweaks."], ["How to Read FPS and Frame-Time Graphs", "Gaming Tips", "Understand performance beyond one FPS number.", "Average FPS is useful, but frame time shows how consistently frames are arriving. A game can report a high average while still feeling uneven if there are spikes. Compare the same scene before and after a setting change to identify the real improvement."], ["Best Order for Lowering Graphics Settings", "PC Gaming", "Know which settings to reduce first.", "Start with shadows, reflections, volumetric effects, ambient occlusion, crowd density and view distance when performance is poor. Keep textures higher when your GPU has enough VRAM because texture quality can sometimes have a smaller performance cost than other effects. Always test changes rather than following a universal preset."]];
+const cards=[...document.querySelectorAll('.card')];
+
+function renderArticle(i){
+  const [title,cat,desc,body]=data[i];
+  document.getElementById('articleTitle').textContent=title;
+  document.getElementById('articleMeta').textContent=cat+" • GAMEZONE GUIDE";
+  const box=document.getElementById('articleBody');
+  box.innerHTML=body.split("\n").map(x=>x.trim()?'<p>'+escapeHtml(x)+'</p>':'').join('');
+  document.getElementById('articleView').classList.add('show');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function openArticle(i){ renderArticle(i); }
+function closeArticle(){ document.getElementById('articleView').classList.remove('show'); }
+function escapeHtml(s){
+  return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+}
+function filterCat(cat){
+  document.querySelectorAll('.cat').forEach(b=>b.classList.toggle('active',b.textContent.trim()===cat));
+  cards.forEach(card=>{card.style.display=(cat==='All'||card.dataset.cat===cat)?'block':'none';});
+}
+function searchArticles(){
+  const q=document.getElementById('search').value.toLowerCase().trim();
+  cards.forEach(card=>{
+    const match=(card.dataset.title+" "+card.dataset.cat+" "+card.textContent).toLowerCase().includes(q);
+    card.style.display=match?'block':'none';
+  });
+}
+</script>
+</body>
+</html>
